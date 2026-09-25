@@ -1,4 +1,9 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -14,7 +19,9 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "crimson";
+const skillColor = "maroon";
+const fontWeight = "bold";
+const textCase = "Upper";
 ---
 
 <html lang="en">
@@ -27,24 +34,23 @@ const skillColor = "crimson";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 
-        <style>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {
             color: maroon;
             font-size: 4rem;
         }
 
         .skill {
-        color: var(--skillColor);
-        font-weight: bold;
+          color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
         }
         </style>
 
 
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/"> Mi blog con kegovc </a>
+        <Header />
 
   <h1>My Astro Site</h1>
  <h1>{pageTitle}</h1>
@@ -74,6 +80,14 @@ const skillColor = "crimson";
 
 </ul>
 
+        <Footer />
+
+        <script>
+            import "../scripts/menu.js";
+        </script>
 </body>
+
+
+
 	
 </html>
