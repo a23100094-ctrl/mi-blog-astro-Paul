@@ -1,9 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
+const pageTitle = "Paul";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+	<main class="home-page">
+		<section class="intro" aria-labelledby="intro-title">
+			<p class="eyebrow">Diseño · Tecnología · Aprendizaje</p>
+			<h2 id="intro-title">Construyo ideas con intención.</h2>
+			<p class="intro-copy">Soy Paul, estudiante y creador en formación. Este espacio reúne mis proyectos, experimentos y notas mientras aprendo a convertir curiosidad en cosas reales.</p>
+			<a class="text-link" href="/about/">Conoce mi historia <span aria-hidden="true">↗</span></a>
+		</section>
+
+		<section class="projects" aria-labelledby="projects-title">
+			<div class="section-heading">
+				<p class="eyebrow">Selección personal</p>
+				<h2 id="projects-title">Proyectos destacados</h2>
+			</div>
+
+			<div class="project-list">
+				<article class="project project-featured">
+					<p class="project-number">01 / 03</p>
+					<div>
+						<h3>Mi primer sitio con Astro</h3>
+						<p>Un laboratorio personal para practicar componentes, contenido y diseño web.</p>
+						<span class="project-tag">Astro · CSS</span>
+					</div>
+				</article>
+				<article class="project">
+					<p class="project-number">02 / 03</p>
+					<div>
+						<h3>Notas de aprendizaje</h3>
+						<p>Ideas y descubrimientos de mi recorrido por JavaScript y React.</p>
+						<span class="project-tag">JavaScript · React</span>
+					</div>
+				</article>
+				<article class="project">
+					<p class="project-number">03 / 03</p>
+					<div>
+						<h3>Próximo proyecto</h3>
+						<p>Un espacio reservado para la siguiente idea que convierta en realidad.</p>
+						<span class="project-tag">En construcción</span>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
 </BaseLayout>

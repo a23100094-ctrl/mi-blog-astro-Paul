@@ -7,13 +7,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "Fernao",
-  country: "Mexico",
-  occupation: "Student",
-  hobbies: ["Singing", "Boxing", "Writing"],
+  firstName: "Paul",
+  country: "México",
+  occupation: "estudiante",
+  hobbies: ["guitarra", "emprendimiento", "GYM"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Documentación"];
 
 const happy = true;
 const finished = true;
@@ -21,7 +21,7 @@ const goal = 3;
 
 const skillColor = "maroon";
 const fontWeight = "bold";
-const textCase = "Upper";
+const textCase = "uppercase";
 ---
 
   <style define:vars={{skillColor, fontWeight, textCase}}>
@@ -37,32 +37,32 @@ const textCase = "Upper";
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>... and my new Astro site!</h2>
+    <h2>... ¡y mi nuevo sitio de Astro!</h2>
 
-    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+    <p>Estoy siguiendo el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web y es la primera que he creado por mi cuenta.</p>
 
-    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    <p>Este sitio se actualizará a medida que complete más partes del tutorial, así que vuelve pronto para ver cómo avanza mi recorrido.</p>
 
-    <p>Here are a few facts about me:</p>
+    <p>Estos son algunos datos sobre mí:</p>
 
     <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+        <li>Me llamo {identity.firstName}.</li>
+        <li>Vivo en {identity.country} y soy {identity.occupation}.</li>
         {identity.hobbies.length >= 2 &&
-        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]} but I also like {identity.hobbies[2]}</li>
+        <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}, pero también me gusta el {identity.hobbies[2]}.</li>
         }
     </ul>
 
-    <p>My skills are:</p>
+      <p>Mis habilidades son:</p>
 
   <ul>
     {skills.map((skill) => <li class="skill"> {skill}</li>)}
 
-    {happy && <p>I am happy to be learning Astro!</p>}
+    {happy && <p>¡Me alegra estar aprendiendo Astro!</p>}
 
-    {finished && <p>I finished this tutorial!</p>}
+    {finished && <p>¡He terminado este tutorial!</p>}
 
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+    {goal === 3 ? <p>Mi objetivo es terminarlo en 3 días.</p> : <p>Mi objetivo no es terminarlo en 3 días.</p>}
 
   </ul>
 
